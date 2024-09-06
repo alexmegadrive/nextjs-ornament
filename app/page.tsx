@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Alert, ThemeProvider, themeOrnamentDefault } from "@/ornament";
+import { Alert, ThemeProvider, themeOrnamentDefault, Typography } from "@/ornament";
 
 export default function Home() {
   return (
@@ -15,26 +15,27 @@ export default function Home() {
             height={38}
             priority
           />
-          <p>Static elements inside ThemeProvider</p>
-          <p>Static elements inside ThemeProvider</p>
-          <p>Static elements inside ThemeProvider</p>
+          <p>Static element inside ThemeProvider</p>
+          <p>Static element inside ThemeProvider</p>
+          <p>Static element inside ThemeProvider</p>
+          <Typography>777</Typography>
           <Alert
-            title={"this element is NOT Static (compiled on client)"}
+            title={"this element is prerendered on server and re-rendered on client"}
             status="success"
           />
           <Alert
-            title={"this element is NOT Static (compiled on client)"}
+            title={"this element is prerendered on server and re-rendered on client"}
             status="error"
           />
           <Alert
-            title={"this element is NOT Static (compiled on client)"}
+            title={"this element is prerendered on server and re-rendered on client"}
             status="warning"
           />
         </main>
       </ThemeProvider>
       <p></p>
-      <p>Static elements outside ThemeProvider</p>
-      <p>Static elements outside ThemeProvider</p>
+      <p>Static element outside ThemeProvider</p>
+      <p>Static element outside ThemeProvider</p>
     </div>
   );
 }
